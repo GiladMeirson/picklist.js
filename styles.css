@@ -1,0 +1,316 @@
+/* Custom styles for Dropdown List documentation site */
+
+/* Global font and body settings */
+body {
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Smooth scrolling for in-page anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Navbar links styling (using purple accent color) */
+  .navbar-nav .nav-link {
+    color: #6f42c1 !important;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  .navbar-nav .nav-link:hover {
+    color: #59369e !important;
+  }
+  .navbar-nav .nav-link.active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  .navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #007bff;
+    transition: all 0.3s ease;
+  }
+  .navbar-nav .nav-link:hover::after {
+    width: 80%;
+    left: 10%;
+  }
+  
+  /* Hero header section with organic gradient background and animations */
+  #home {
+    /* Organic background with a touch of purple */
+    background: linear-gradient(135deg, #c8e6c9 0%, #e1bee7 100%);
+    color: #343a40;
+  }
+  #home h1 {
+    /* Fade-in from top animation */
+    animation: fadeInDown 0.8s ease-out;
+  }
+  #home .lead {
+    animation: fadeInDown 1s ease-out;
+  }
+  #home .btn {
+    animation: fadeInDown 1.2s ease-out;
+  }
+  
+  /* Primary button color override (purple theme) */
+  .btn-primary {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+    transition: all 0.3s ease;
+  }
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: #59369e;
+    border-color: #59369e;
+  }
+  .btn-primary:active {
+    background-color: #4a2c85;
+    border-color: #4a2c85;
+  }
+  .btn-primary:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.5);
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Section headings - underline accent */
+  .container h2 {
+    display: inline-block;
+    border-bottom: 3px solid #6f42c1;
+    padding-bottom: 0.2rem;
+    margin-bottom: 1.5rem;
+    color: #343a40;
+  }
+  
+  /* Code block styling */
+  pre {
+    overflow-x: auto;
+  }
+  pre code {
+    /* (Additional code text styling can be added if needed) */
+  }
+  /* Using Bootstrap utility classes (bg-light, bg-white, etc.) for backgrounds and borders of code blocks */
+  
+  /* Dropdown live demo component styles */
+  .dropdown-list-demo {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .dropdown-list-demo .dropdown-menu {
+    display: block;
+    position: relative;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 200px;
+    margin: 0;
+    padding: 0.5rem 0;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    z-index: 1000;
+    overflow-y: auto;
+    opacity: 1;
+    transform: none;
+    margin-top: 0.5rem;
+  }
+  .dropdown-list-demo .dropdown-menu li {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .dropdown-list-demo .dropdown-menu li:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+  }
+  .dropdown-list-demo .dropdown-menu .no-results {
+    /* 'No results' list item styling */
+    cursor: default;
+    user-select: none;
+    color: #6c757d;  /* matches Bootstrap .text-muted */
+  }
+  
+  /* Show dropdown menu with fade-in effect when open */
+  .dropdown-list-demo.open .dropdown-menu {
+    display: block;
+    animation: fadeIn 0.2s ease-in-out;
+  }
+  
+  /* Keyframes for fade-in animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Footer styling */
+  footer {
+    background-color: #343a40;
+  }
+  footer a {
+    color: #f8f9fa;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  /* Animation for section scrolling */
+  section {
+    transition: all 0.5s ease;
+  }
+  
+  section:target {
+    padding-top: 80px;
+    margin-top: -60px;
+  }
+  
+  /* Styling for code blocks */
+  .code-block {
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin: 1.5rem 0;
+    transition: all 0.3s ease;
+    background-color: #272822;
+    color: #f8f8f2;
+  }
+  
+  .code-block:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Enhanced Feature List */
+  .feature-list li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1rem;
+    transition: transform 0.2s ease;
+  }
+  
+  .feature-list li:before {
+    content: "▶";
+    position: absolute;
+    left: -1rem;
+    color: #007bff;
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-list li:hover {
+    transform: translateX(3px);
+  }
+  
+  .feature-list li:hover:before {
+    transform: scale(1.2);
+  }
+  
+  /* Section titles with animation preparation */
+  .section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #007bff, #6610f2);
+    transition: width 0.3s ease;
+  }
+  
+  .section-title:hover::after {
+    width: 100%;
+  }
+  
+  /* Code syntax highlighting customizations */
+  code[class*="language-"] {
+    font-size: 0.95em;
+  }
+  
+  /* Make navbar transitions smoother */
+  .navbar {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .scrolled {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Feature cards in header */
+  .feature-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    height: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .feature-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #6f42c1;
+  }
+  
+  .feature-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    color: #666;
+  }
+  
+  /* Live demo section enhancements */
+  .code-preview {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    height: 100%;
+  }
+  
+  #demoOutput {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+  
+  #keywords {
+    color: #6f42c1;
+    font-family: monospace;
+  }
+  
+  #selectedValue {
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  /* Add some space for the dropdown component */
+  dropdown-list {
+    margin: 1rem 0;
+    max-width: 100% !important;
+  }
