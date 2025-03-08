@@ -1,11 +1,11 @@
-# 🎯 KeywordSelect.js
+# 🎯 Picklist.js
 
-A powerful, lightweight JavaScript web component that revolutionizes dropdowns with smart keyword-based search functionality. Go beyond simple text matching - search through associated keywords, tags, or even different languages!
+A lightweight custom web component that provides a smart, keyword-based autocomplete dropdown for seamless and dynamic user input. Part of the EZ.js family!
 
 ![npm bundle size](https://img.shields.io/badge/minified%20size-2.1%20kB-blue)
 ![npm](https://img.shields.io/badge/no-dependencies-brightgreen)
 ![JavaScript](https://img.shields.io/badge/vanilla-javascript-yellow)
-![License](https://img.shields.io/badge/license-MIT-green)
+![License](https://img.shields.io/badge/license-Apache--2.0-green)
 
 ## ✨ Features
 
@@ -24,7 +24,7 @@ A powerful, lightweight JavaScript web component that revolutionizes dropdowns w
 
 ### 1. Include the Script
 ```html
-<script src="path/to/keywordselect.js"></script>
+<script src="picklist.min.js"></script>
 ```
 
 ### 2. Add the Component
@@ -47,7 +47,7 @@ dropdown.setItems([
 ]);
 ```
 
-## 🎯 Why KeywordSelect.js?
+## 🎯 Why Picklist.js?
 
 - **Smart Search**: Search through both visible text AND keywords
 - **Multi-Language**: Perfect for international applications
@@ -59,20 +59,23 @@ dropdown.setItems([
 ## 📦 Installation Options
 
 ### Direct Download
-Download `keywordselect.js` and include it in your project:
+Download `picklist.min.js` and include it in your project:
 ```html
-<script src="path/to/keywordselect.js"></script>
+<script src="path/to/picklist.min.js"></script>
 ```
 
-### CDN (Coming Soon)
-```html
-<!-- Add CDN link once published -->
-```
-
-### NPM (Coming Soon)
+### NPM
 ```bash
-npm install keywordselect
+npm install picklist.js
 ```
+
+### GitHub
+```bash
+git clone https://github.com/GiladMeirson/picklist.js.git
+```
+
+## Documentation
+For complete documentation, visit: https://giladmeirson.github.io/picklist.js/documentation.html
 
 ## 🛠️ API Reference
 
@@ -164,8 +167,12 @@ dropdown-list {
 
 ## 👥 Contributing
 
-We love contributions! Please feel free to submit a Pull Request.
+We love contributions! Please feel free to submit issues and Pull Requests at https://github.com/GiladMeirson/picklist.js
 
 ## 📄 License
 
-MIT License - feel free to use this in your projects!
+Apache-2.0 License - see the repository for full license text.
+
+## Author
+
+Created by Gilad Meirson as part of the EZ.js family of web components.
