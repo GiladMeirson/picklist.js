@@ -158,6 +158,57 @@ dropdown-list {
 </script>
 ```
 
+### Framework Integration Examples
+
+#### React
+```jsx
+import 'picklist.js';
+
+function App() {
+  return (
+    <dropdown-list 
+      id="myDropdown" 
+      placeholder="Search..."
+      onDropdown-select={(e) => console.log(e.detail)}
+    />
+  );
+}
+```
+
+#### Vue
+```vue
+<template>
+  <dropdown-list 
+    id="myDropdown" 
+    placeholder="Search..."
+    @dropdown-select="handleSelect"
+  />
+</template>
+
+<script>
+import 'picklist.js';
+</script>
+```
+
+#### Angular
+```typescript
+// app.module.ts
+import 'picklist.js';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
+@NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
+
+// component.html
+<dropdown-list 
+  id="myDropdown" 
+  placeholder="Search..."
+  (dropdown-select)="handleSelect($event)"
+>
+</dropdown-list>
+```
+
 ## 🌐 Browser Support
 
 - Chrome (latest)
