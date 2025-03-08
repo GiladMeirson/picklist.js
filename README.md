@@ -29,13 +29,13 @@ A lightweight custom web component that provides a smart, keyword-based autocomp
 
 ### 2. Add the Component
 ```html
-<dropdown-list id="myDropdown" placeholder="Search..."></dropdown-list>
+<pick-list id="myPickList" placeholder="Search..."></pick-list>
 ```
 
 ### 3. Initialize with Items
 ```javascript
-const dropdown = document.getElementById('myDropdown');
-dropdown.setItems([
+const pickList = document.getElementById('myPickList');
+pickList.setItems([
     {
         value: 'Apple',
         keywords: ['fruit', 'red', 'sweet', 'תפוח'] // Support for multiple languages!
@@ -83,14 +83,14 @@ For complete documentation, visit: https://giladmeirson.github.io/picklist.js/do
 
 - `placeholder`: Sets the input placeholder text
   ```html
-  <dropdown-list placeholder="Search items..."></dropdown-list>
+  <pick-list placeholder="Search items..."></pick-list>
   ```
 
 ### Methods
 
 - `setItems(items)`: Sets the dropdown items and their associated keywords
   ```javascript
-  dropdown.setItems([
+  pickList.setItems([
     {
       value: 'Display Text',
       keywords: ['keyword1', 'keyword2']
@@ -100,17 +100,17 @@ For complete documentation, visit: https://giladmeirson.github.io/picklist.js/do
 
 ### Events
 
-- `dropdown-select`: Fired when an item is selected
+- `picklist-select`: Fired when an item is selected
   ```javascript
-  dropdown.addEventListener('dropdown-select', (e) => {
+  pickList.addEventListener('picklist-select', (e) => {
     console.log('Selected:', e.detail.value);
     console.log('Keywords:', e.detail.keywords);
   });
   ```
 
-- `dropdown-input`: Fired when the input value changes
+- `picklist-input`: Fired when the input value changes
   ```javascript
-  dropdown.addEventListener('dropdown-input', (e) => {
+  pickList.addEventListener('picklist-input', (e) => {
     console.log('Input value:', e.detail.value);
   });
   ```
@@ -120,7 +120,7 @@ For complete documentation, visit: https://giladmeirson.github.io/picklist.js/do
 The component comes with beautiful default styling but can be easily customized:
 
 ```css
-dropdown-list {
+pick-list {
     max-width: 400px;
     margin: 20px;
 }
@@ -130,7 +130,7 @@ dropdown-list {
 
 ### Basic Usage
 ```html
-<dropdown-list id="simpleList" placeholder="Select an option..."></dropdown-list>
+<pick-list id="simpleList" placeholder="Select an option..."></pick-list>
 <script>
     const list = document.getElementById('simpleList');
     list.setItems([
@@ -142,7 +142,7 @@ dropdown-list {
 
 ### Multi-Language Support
 ```html
-<dropdown-list id="multiLangList" placeholder="Search fruits..."></dropdown-list>
+<pick-list id="multiLangList" placeholder="Search fruits..."></pick-list>
 <script>
     const fruits = document.getElementById('multiLangList');
     fruits.setItems([
@@ -166,10 +166,10 @@ import 'picklist.js';
 
 function App() {
   return (
-    <dropdown-list 
-      id="myDropdown" 
+    <pick-list 
+      id="myPickList" 
       placeholder="Search..."
-      onDropdown-select={(e) => console.log(e.detail)}
+      onPickList-select={(e) => console.log(e.detail)}
     />
   );
 }
@@ -178,10 +178,10 @@ function App() {
 #### Vue
 ```vue
 <template>
-  <dropdown-list 
-    id="myDropdown" 
+  <pick-list 
+    id="myPickList" 
     placeholder="Search..."
-    @dropdown-select="handleSelect"
+    @picklist-select="handleSelect"
   />
 </template>
 
@@ -201,12 +201,12 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 })
 
 // component.html
-<dropdown-list 
-  id="myDropdown" 
+<pick-list 
+  id="myPickList" 
   placeholder="Search..."
-  (dropdown-select)="handleSelect($event)"
+  (picklist-select)="handleSelect($event)"
 >
-</dropdown-list>
+</pick-list>
 ```
 
 ## 🌐 Browser Support
