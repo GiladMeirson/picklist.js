@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const fruitDropdown = document.getElementById('fruitDropdown');
+    const fruitDropdown = document.getElementById('fruitPicklist');
     const selectedValue = document.getElementById('selectedValue');
     const keywords = document.getElementById('keywords');
 
@@ -19,13 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
     fruitDropdown.setItems(fruits);
 
     // Listen for selection events
-    fruitDropdown.addEventListener('dropdown-select', (event) => {
+    fruitDropdown.addEventListener('picklist-select', (event) => {
         selectedValue.textContent = event.detail.value;
         keywords.textContent = event.detail.keywords.join(', ');
     });
 
     // Reset output when dropdown input changes
-    fruitDropdown.addEventListener('dropdown-input', () => {
+    fruitDropdown.addEventListener('picklist-input', () => {
         if (!fruitDropdown._selectedValue) {
             selectedValue.textContent = 'none';
             keywords.textContent = 'none';

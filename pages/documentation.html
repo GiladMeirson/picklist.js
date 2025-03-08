@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css"/>
   <!-- Custom CSS -->
   <link rel="stylesheet" href="../assets/styles.css">
-  <script src="./pickList.min.js"></script>
+  <script src="../pickList.min.js"></script>
 </head>
 <body>
   <!-- Header -->
@@ -22,7 +22,7 @@
       <a class="navbar-brand animate__animated animate__fadeIn" href="#">
         <img src="../assets/logo5.png" alt="picklist List Logo" style="height:60px;padding-bottom: 18px;">
         <img src="../assets/fullLogo4ez.png" alt="ez logo"  style="height:60px;padding-bottom: 18px;">
-         introduces pick-list
+         introduces <span><</span>pick-list<span>></span>
       </a>
       <!-- Mobile menu toggle button -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
@@ -38,7 +38,7 @@
           <li class="nav-item"><a class="nav-link" href="#api-reference">📚 API Reference</a></li>
           <li class="nav-item"><a class="nav-link" href="#events">🔔 Events</a></li>
           <li class="nav-item"><a class="nav-link" href="#live-demo">✨ Live Demo</a></li>
-          <li class="nav-item"><a class="nav-link" href="#download">⬇️ Download</a></li>
+          <li class="nav-item"><a class="nav-link" href="../pickList.min.js" download="picklist.min.js">⬇️ Download</a></li>
           <!-- External links -->
           <li class="nav-item"><a class="nav-link" href="https://github.com/GiladMeirson/picklist.js" target="_blank">🐱 GitHub</a></li>
           <li class="nav-item"><a class="nav-link" href="https://www.npmjs.com/package/picklist.js" target="_blank">📦 NPM</a></li>
@@ -53,7 +53,7 @@
       <!-- Library Name and Tagline -->
       <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">Pick - List</h1>
       <h3 class="display-7 fw-bold animate__animated animate__fadeInDown">Write less - pick more 😉</h3>
-      <p class="lead animate__animated animate__fadeIn animate__delay-1s">A lightweight, customizable HTML Web Component for creating searchable dropdown lists.</p>
+      <p class="lead animate__animated animate__fadeIn animate__delay-1s">A lightweight, customizable HTML web component for creating drop-down lists that are searchable by keywords of your choice.</p>
       <div class="row justify-content-center mt-4 animate__animated animate__fadeIn animate__delay-1s">
         <div class="col-md-8">
           <div class="row g-3">
@@ -89,18 +89,16 @@
       <p>Install <code>pick-list</code> via NPM or include it directly in your HTML. Follow the guide below to get started:</p>
       <!-- Installation steps -->
       <h5>1. Install via NPM</h5>
-      <pre class="code-block"><code class="language-bash">npm install picklist</code></pre>
+      <pre class="code-block"><code class="language-bash">npm install picklist.js</code></pre>
       <p class="mt-3">After installing, import or require the library in your project:</p>
       <pre class="code-block"><code class="language-js">// Using ES6 import
-import picklist from 'picklist';
+import picklist from 'picklist.js';
 // or using CommonJS require
-const Picklist = require('picklist');</code></pre>
+const Picklist = require('picklist.js');</code></pre>
       <h5 class="mt-4">2. Include via &lt;script&gt; Tag</h5>
       <p>Alternatively, use a CDN to include the library in your HTML:</p>
-      <pre class="code-block"><code class="language-html">&lt;!-- Include the dropdown-list library (replace with actual CDN link) --&gt;
-&lt;link rel="stylesheet" href="https://cdn.example.com/dropdown-list/dist/dropdown-list.min.css"&gt;
-&lt;script src="https://cdn.example.com/dropdown-list/dist/dropdown-list.min.js"&gt;&lt;/script&gt;</code></pre>
-      <p>Ensure you include the library's CSS (if provided) for default styles, and place the script at the end of your body for proper loading.</p>
+      <pre class="code-block"><code class="language-html">&lt;script src="https://cdn.jsdelivr.net/gh/GiladMeirson/picklist.js@main/pickList.min.js"&gt;&lt;/script&gt;</code></pre>
+      <p>If you are using plain HTML and vanilla JS, use this link in the head or at the end of the body.</p>
     </div>
   </section>
 
@@ -108,17 +106,19 @@ const Picklist = require('picklist');</code></pre>
   <section id="usage" class="py-5 bg-light">
     <div class="container">
       <h2 class="mb-4 section-title">Usage</h2>
-      <p>Using the dropdown-list component is straightforward:</p>
+      <p>Using the pick-list component is straightforward:</p>
       
       <h5>1. Import the Web Component</h5>
-      <pre class="code-block"><code class="language-html">&lt;script src="dropdownList.js"&gt;&lt;/script&gt;</code></pre>
+      <pre class="code-block"><code class="language-html">&lt;script src="https://cdn.jsdelivr.net/gh/GiladMeirson/picklist.js@main/pickList.min.js"&gt;&lt;/script&gt;</code></pre>
 
       <h5>2. Use the custom element in your HTML</h5>
-      <pre class="code-block"><code class="language-html">&lt;dropdown-list placeholder="Select a fruit..."&gt;&lt;/dropdown-list&gt;</code></pre>
+      <pre class="code-block"><code class="language-html">&lt;pick-list placeholder="Select a fruit..."&gt;&lt;/pick-list&gt;
+or you can also use it like this:
+&lt;pick-list placeholder="Select a fruit..." /&gt;</code></pre>
 
       <h5>3. Initialize with items in JavaScript</h5>
-      <pre class="code-block"><code class="language-javascript">const dropdown = document.querySelector('dropdown-list');
-dropdown.setItems([
+      <pre class="code-block"><code class="language-javascript">const picklist = document.querySelector('pick-list');
+picklist.setItems([
   { value: 'Apple', keywords: ['fruit', 'red', 'sweet'] },
   { value: 'Banana', keywords: ['fruit', 'yellow', 'tropical'] },
   { value: 'Orange', keywords: ['fruit', 'citrus', 'vitamin c'] }
@@ -130,22 +130,65 @@ dropdown.setItems([
   <section id="api-reference" class="py-5">
     <div class="container">
       <h2 class="mb-4 section-title">API Reference</h2>
-      <p>The <code>dropdown-list</code> library provides a simple API for customization and control. Below are some common methods and options:</p>
+      <p>The <code>pick-list</code> component provides a comprehensive API for managing picklist functionality. Here are all available properties, methods and events:</p>
+      
+      <h5 class="mt-4">Properties</h5>
       <ul class="feature-list">
-        <li><strong>new DropdownList(element, options)</strong>: Initializes a dropdown on the given element (selector or DOM node). <em>Options</em> may include:
-          <ul>
-            <li><code>items</code>: Array of items for the dropdown (if not using a select element).</li>
-            <li><code>search</code>: Boolean to enable/disable search filtering (default true).</li>
-            <li><code>placeholder</code>: Placeholder text when no item is selected.</li>
-            <li><code>multiple</code>: Boolean to allow multiple selection (if supported).</li>
-          </ul>
-        </li>
-        <li><strong>dropdown.open()</strong>: Programmatically open the dropdown menu.</li>
-        <li><strong>dropdown.close()</strong>: Programmatically close the dropdown menu.</li>
-        <li><strong>dropdown.select(value)</strong>: Select an item programmatically by value.</li>
-        <li><strong>dropdown.clear()</strong>: Clear the current selection.</li>
+        <li><strong>_items</strong>: Internal array that stores all picklist items</li>
+        <li><strong>_keywords</strong>: Map that associates items with their searchable keywords</li>
+        <li><strong>_isOpen</strong>: Boolean indicating if picklist is currently open</li>
+        <li><strong>_selectedValue</strong>: Currently selected item value</li>
       </ul>
-      <p>Refer to the official documentation for a full list of options and methods. The above covers the most commonly used API features for <code>dropdown-list</code>.</p>
+
+      <h5 class="mt-4">Methods</h5>
+      <ul class="feature-list">
+        <li><strong>setItems(items)</strong>: Sets the picklist items array and initializes keywords
+          <pre class="code-block"><code class="language-javascript">myPickList.setItems([
+    { value: 'Apple', keywords: ['fruit', 'red', 'sweet'] },
+    { value: 'Banana', keywords: ['yellow', 'tropical'] }
+]);</code></pre>
+        </li>
+        
+
+        
+        <li><strong>openDropdown()</strong>: Opens the picklist
+          <pre class="code-block"><code class="language-javascript">myPickList.openDropdown();</code></pre>
+        </li>
+        
+        <li><strong>closeDropdown()</strong>: Closes the picklist
+          <pre class="code-block"><code class="language-javascript">myPickList.closeDropdown();</code></pre>
+        </li>
+        
+        <li><strong>selectItem(value)</strong>: Programmatically select an item
+          <pre class="code-block"><code class="language-javascript">myPickList.selectItem('Apple');</code></pre>
+        </li>
+      </ul>
+
+      <h5 class="mt-4">Events</h5>
+      <ul class="feature-list">
+        <li><strong>picklist-select</strong>: Fired when an item is selected
+          <pre class="code-block"><code class="language-javascript">myPickList.addEventListener('picklist-select', (e) => {
+    console.log('Selected value:', e.detail.value);
+    console.log('Item keywords:', e.detail.keywords);
+});</code></pre>
+        </li>
+        
+        <li><strong>picklist-input</strong>: Fired on input changes
+          <pre class="code-block"><code class="language-javascript">myPickList.addEventListener('picklist-input', (e) => {
+    console.log('Current input:', e.detail.value);
+});</code></pre>
+        </li>
+      </ul>
+
+      <h5 class="mt-4">Data Structure</h5>
+      <p>Items can be passed in two formats:</p>
+      <pre class="code-block"><code class="language-javascript">// Option 1: Object with value and keywords
+const items = [
+    { value: 'Apple', keywords: ['fruit', 'red', 'sweet'] }
+];
+
+// Option 2: Simple string (keyword will be the lowercase value)
+const items = ['Apple', 'Banana', 'Orange'];</code></pre>
     </div>
   </section>
 
@@ -153,26 +196,26 @@ dropdown.setItems([
   <section id="events" class="py-5 bg-light">
     <div class="container">
       <h2 class="mb-4 section-title">Events</h2>
-      <p>The dropdown-list library emits custom events to help you hook into user interactions. You can listen for these events on the dropdown element:</p>
+      <p>The picklist library emits custom events to help you hook into user interactions. You can listen for these events on the picklist element:</p>
       <ul class="feature-list">
-        <li><code>dropdown-select</code>: Fired when an option is selected. The event detail typically contains the selected value or item.</li>
-        <li><code>dropdown-input</code>: Fired when the search input value changes (each time the user types). The event detail may contain the current input string.</li>
+        <li><code>picklist-select</code>: Fired when an option is selected. The event detail typically contains the selected value or item.</li>
+        <li><code>picklist-input</code>: Fired when the search input value changes (each time the user types). The event detail may contain the current input string.</li>
       </ul>
       <p>Below is an example of attaching event listeners to capture these events:</p>
       <pre class="code-block"><code class="language-js">&lt;script&gt;
-  const dropdownElement = document.getElementById('myDropdown');
+  const picklistElement = document.getElementById('myPicklist');
   // Listen for selection events
-  dropdownElement.addEventListener('dropdown-select', function(event) {
+  picklistElement.addEventListener('picklist-select', function(event) {
     console.log('Selected item:', event.detail.value);
     // You can also update your UI or perform actions based on the selection
   });
   // Listen for input (search) events
-  dropdownElement.addEventListener('dropdown-input', function(event) {
+  picklistElement.addEventListener('picklist-input', function(event) {
     console.log('Current search text:', event.detail.search);
     // This event can be used to implement dynamic suggestions or other interactions
   });
 &lt;/script&gt;</code></pre>
-      <p>By leveraging these events, you can integrate custom logic whenever a user selects an item or types in the dropdown's search field. This makes the component highly extensible and adaptable to various use cases.</p>
+      <p>By leveraging these events, you can integrate custom logic whenever a user selects an item or types in the picklist's search field. This makes the component highly extensible and adaptable to various use cases.</p>
     </div>
   </section>
 
@@ -180,11 +223,11 @@ dropdown.setItems([
   <section id="live-demo" class="py-5">
     <div class="container">
       <h2 class="mb-4 section-title">Live Demo</h2>
-      <p>Try out the dropdown list component with keyword search functionality:</p>
+      <p>Try out the picklist component with keyword search functionality:</p>
       
       <div class="row">
         <div class="col-md-5">
-          <dropdown-list placeholder="Search fruits..." id="fruitDropdown"></dropdown-list>
+          <pick-list placeholder="Search fruits..." id="fruitPicklist"></pick-list>
           <div id="demoOutput" class="mt-3">
             <p><strong>Selected:</strong> <span id="selectedValue">none</span></p>
             <p><strong>Search Keywords:</strong> <span id="keywords">none</span></p>
@@ -215,29 +258,29 @@ dropdown.setItems([
   <section id="download" class="py-5 bg-light">
     <div class="container">
       <h2 class="mb-4 section-title">Download</h2>
-      <p>You can obtain <code>dropdown-list</code> from the following sources:</p>
+      <p>You can obtain <code>picklist</code> from the following sources:</p>
       <ul class="feature-list">
-        <li><strong>NPM:</strong> The package is available on NPM. Install it by running <code>npm install dropdown-list</code> in your project.</li>
-        <li><strong>GitHub:</strong> Visit the <a href="https://github.com/yourusername/dropdown-list" target="_blank">GitHub repository</a> to clone the source code, view issues, or contribute.</li>
+        <li><strong>NPM:</strong> The package is available on NPM. Install it by running <code>npm install picklist.js</code> in your project.</li>
+        <li><strong>GitHub:</strong> Visit the <a href="https://github.com/GiladMeirson/picklist.js" target="_blank">GitHub repository</a> to clone the source code, view issues, or contribute.</li>
         <li><strong>CDN:</strong> Use the CDN links (from services like jsDelivr or unpkg) to include the library directly in your HTML without installation.</li>
       </ul>
       <p>Once downloaded or installed, you can include the library in your project and follow the <a href="#usage">Usage</a> guide to integrate it.</p>
-      <pre class="code-block"><code class="language-bash">npm install dropdown-list</code></pre>
+      
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="py-4 bg-dark text-light">
     <div class="container text-center">
-      <p class="mb-2">© 2025 Dropdown List</p>
+      <p class="mb-2">© 2025 EZ.js</p>
       <p class="mb-0">
-        <a href="https://github.com/yourusername/dropdown-list" class="text-decoration-none text-light" target="_blank">🐱 GitHub</a>
+        <a href="https://github.com/GiladMeirson/picklist.js" class="text-decoration-none text-light" target="_blank">🐱 GitHub</a>
         &nbsp;|&nbsp;
-        <a href="https://www.npmjs.com/package/dropdown-list" class="text-decoration-none text-light" target="_blank">📦 NPM</a>
+        <a href="https://www.npmjs.com/package/picklist.js" class="text-decoration-none text-light" target="_blank">📦 NPM</a>
         &nbsp;|&nbsp;
         <a href="#home" class="text-decoration-none text-light">🏠 Documentation Home</a>
       </p>
-      <p class="mt-2 small">Have questions? Contact us at <a href="mailto:support@dropdownlist.dev" class="text-light">✉️ support@dropdownlist.dev</a>.</p>
+      <p class="mt-2 small">Have questions? Contact us at <a href="mailto:Gilad.meirson@gmail.com" class="text-light">✉️ support@picklist.dev</a>.</p>
     </div>
   </footer>
 
