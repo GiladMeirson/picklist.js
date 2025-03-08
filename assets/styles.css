@@ -314,3 +314,32 @@ body {
     margin: 1rem 0;
     max-width: 100% !important;
   }
+
+  /* Copy button styles */
+  .code-block-wrapper {
+    position: relative;
+  }
+
+  .copy-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 4px 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+  }
+
+  .copy-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .copy-button.copied {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
