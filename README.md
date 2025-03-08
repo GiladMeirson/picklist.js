@@ -175,4 +175,4 @@ Apache-2.0 License - see the repository for full license text.
 
 ## Author
 
-Created by Gilad Meirson as part of the EZ.js family of web components.
+Created by [Gilad Meirson](https://giladmeirson.site/) as part of the EZ.js family of web components.
