@@ -75,7 +75,7 @@ git clone https://github.com/GiladMeirson/picklist.js.git
 ```
 
 ## Documentation
-For complete documentation, visit: https://giladmeirson.github.io/picklist.js/documentation.html
+For complete documentation, visit: https://giladmeirson.github.io/picklist.js/pages/documentation.html
 
 ## 🛠️ API Reference
 
